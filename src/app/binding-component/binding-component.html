@@ -1,0 +1,15 @@
+<h3>Esempio Data Binding</h3>
+
+<!-- One-Way binding (interpolazione) Mostra il valore di una variabile-->
+<p>Il nome dell'utente è: {{ userName }}</p>
+
+<!-- Property Binding, imposta in modo dinamico un attributo html-->
+<img [src]="imageUrl" alt="Immagine di esempio">
+
+<!-- Event Binding: esegue un metodo al click dell'utente-->
+<button (click)="saluta()">Saluta</button>
+<p>{{ messaggio }}</p>
+
+<!-- Two-Way Binding, sincronizza input e proprietà-->
+<input [(ngModel)]="userName" placeholder="Inserisci il tuo nome">
+<p>Benvenuto {{ userName }}!</p>
