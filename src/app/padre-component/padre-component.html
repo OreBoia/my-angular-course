@@ -1,0 +1,5 @@
+<!-- padre.component.html -->
+<h3>Contatore (Padre): {{ contatore }}</h3>
+<!-- Passiamo il valore contatore al componente figlio e ascoltiamo l'evento
+countChange -->
+<app-figlio [count]="contatore" (countChange)="onConteggioCambiato($event)"></app-figlio>
