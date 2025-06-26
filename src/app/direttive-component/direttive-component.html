@@ -1,0 +1,16 @@
+<button (click)="isVisible = !isVisible">Toggle</button>
+<p *ngIf="isVisible">Questo testo appare e scompare!</p>
+
+<button (click)="toggleLista()">
+    {{mostraLista == true ? 'Nascondi' : 'Mostra'}}
+</button>
+
+<ul *ngIf="mostraLista">
+    <li 
+        *ngFor="let item of tecnologie; let i = index"
+        [ngClass] = "{'evidenziato': item === techPreferita}"
+        [ngStyle] = "{'font-weight': i % 2 === 0 ? 'bold' : 'normal'}">
+            {{item}}
+    </li>
+</ul>
+

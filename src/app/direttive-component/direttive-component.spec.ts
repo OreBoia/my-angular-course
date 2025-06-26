@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AppModule } from './app-module';
+import { DirettiveComponent } from './direttive-component';
 
-describe('AppModule', () => {
-  let component: AppModule;
-  let fixture: ComponentFixture<AppModule>;
+describe('DirettiveComponent', () => {
+  let component: DirettiveComponent;
+  let fixture: ComponentFixture<DirettiveComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppModule]
+      imports: [DirettiveComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AppModule);
+    fixture = TestBed.createComponent(DirettiveComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
