@@ -8,7 +8,12 @@ import { PadreComponent } from './padre-component/padre-component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MyComponent, HelloWorldComponent, BindingComponent, DirettiveComponent, PadreComponent],
+  imports: [RouterOutlet, 
+    MyComponent, 
+    HelloWorldComponent, 
+    BindingComponent, 
+    DirettiveComponent, 
+    PadreComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
