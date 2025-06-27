@@ -7,6 +7,8 @@ import { DirettiveComponent } from './direttive-component/direttive-component';
 import { PadreComponent } from './padre-component/padre-component';
 import { HomeComponent } from './home-component/home-component';
 import { AboutComponent } from './about-component/about-component';
+import { RegistrazioneComponent } from './registrazione-component/registrazione-component';
+import { LoginComponent } from './login-component/login-component';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +20,9 @@ import { AboutComponent } from './about-component/about-component';
             DirettiveComponent, 
             PadreComponent,
             HomeComponent,
-            AboutComponent],
+            AboutComponent,
+            RegistrazioneComponent,
+            LoginComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

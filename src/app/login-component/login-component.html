@@ -1,0 +1,14 @@
+<h3>Login (Reactive Form)</h3>
+<form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <div>
+        <label> Username:</label>
+        <input formControlName="username"/>
+        <span *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">Username Obbligatorio</span>
+    </div>
+    <div>
+        <label> Password:</label>
+        <input formControlName="password" type="password"/>
+        <span *ngIf="loginForm.get('password')?.errors?.['minlenght'] && loginForm.get('username')?.touched">Password Obbligatorio. Minimo 6 caratteri</span>
+    </div>
+    <button type="submit" [disabled]="loginForm.invalid">Accedi</button>
+</form>
