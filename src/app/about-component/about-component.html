@@ -1,1 +1,6 @@
-<p>about-component works!</p>
+<div *ngIf="utente; else defaultMsg">
+    <p>Ciao, {{ utente }}! Benvenuto nella pagina About.</p>
+</div>
+<ng-template #defaultMsg>
+    <p>Benvenuto nella pagina About.</p>
+</ng-template>
