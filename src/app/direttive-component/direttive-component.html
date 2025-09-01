@@ -6,11 +6,10 @@
 </button>
 
 <ul *ngIf="mostraLista">
-    <li 
+    <li
         *ngFor="let item of tecnologie; let i = index"
         [ngClass] = "{'evidenziato': item === techPreferita}"
         [ngStyle] = "{'font-weight': i % 2 === 0 ? 'bold' : 'normal'}">
             {{item}}
     </li>
 </ul>
-
