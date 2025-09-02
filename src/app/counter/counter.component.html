@@ -1,0 +1,9 @@
+<p>counter works!</p>
+<h2>Contatore NgRx</h2>
+
+<!-- Usiamo il pipe 'async' per sottoscrivere l'Observable e mostrare il valore -->
+<p>Valore attuale: {{ count$ | async }}</p>
+
+<button (click)="increment()">Incrementa</button>
+<button (click)="decrement()">Decrementa</button>
+<button (click)="reset()">Resetta</button>

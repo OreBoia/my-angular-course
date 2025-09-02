@@ -9,20 +9,22 @@ import { HomeComponent } from './home-component/home-component';
 import { AboutComponent } from './about-component/about-component';
 import { RegistrazioneComponent } from './registrazione-component/registrazione-component';
 import { LoginComponent } from './login-component/login-component';
+import { CounterComponent } from './counter/counter.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, 
+  imports: [RouterOutlet,
             RouterModule,
-            MyComponent, 
-            HelloWorldComponent, 
-            BindingComponent, 
-            DirettiveComponent, 
+            MyComponent,
+            HelloWorldComponent,
+            BindingComponent,
+            DirettiveComponent,
             PadreComponent,
             HomeComponent,
             AboutComponent,
             RegistrazioneComponent,
-            LoginComponent],
+            LoginComponent,
+            CounterComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
