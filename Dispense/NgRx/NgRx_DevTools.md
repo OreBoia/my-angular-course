@@ -7,11 +7,12 @@ Il debugging di applicazioni complesse con state management può essere una sfid
 `@ngrx/store-devtools` ascolta tutte le azioni dispatchate e le mutazioni di stato che avvengono nello store NgRx. Invia queste informazioni all'estensione Redux DevTools installata nel browser, che le visualizza in un'interfaccia utente intuitiva.
 
 Questo ti permette di:
-*   Vedere un log di tutte le azioni in tempo reale.
-*   Ispezionare il payload di ogni azione.
-*   Visualizzare l'intero albero di stato prima e dopo ogni azione.
-*   Identificare esattamente quale azione ha causato un determinato cambiamento di stato.
-*   Tornare a uno stato precedente per riprodurre bug (Time-Travel Debugging).
+
+* Vedere un log di tutte le azioni in tempo reale.
+* Ispezionare il payload di ogni azione.
+* Visualizzare l'intero albero di stato prima e dopo ogni azione.
+* Identificare esattamente quale azione ha causato un determinato cambiamento di stato.
+* Tornare a uno stato precedente per riprodurre bug (Time-Travel Debugging).
 
 ## Installazione e Configurazione
 
@@ -64,19 +65,19 @@ Una volta installata l'estensione [Redux DevTools](https://github.com/reduxjs/re
 
 Troverai un pannello con tre sezioni principali:
 
-1.  **Lista delle Azioni**: Sulla sinistra, vedrai un log di ogni azione dispatchata, a partire da `@ngrx/store/init`. Cliccando su un'azione, puoi ispezionarne il `type` e il `payload` nella sezione "Action".
-2.  **Stato Corrente**: Al centro, puoi navigare l'albero dello stato. Puoi visualizzare lo stato come un oggetto (`Tree`), un grafico (`Chart`) o vedere le differenze rispetto allo stato precedente (`Diff`). Questo è estremamente utile per vedere l'impatto di un'azione.
-3.  **Time-Travel Debugging**: In basso, c'è una timeline che ti permette di "viaggiare nel tempo". Puoi cliccare su un'azione passata per riportare l'intera applicazione a quello stato, oppure usare i pulsanti di play, step-by-step, undo/redo per analizzare la sequenza di eventi.
+1. **Lista delle Azioni**: Sulla sinistra, vedrai un log di ogni azione dispatchata, a partire da `@ngrx/store/init`. Cliccando su un'azione, puoi ispezionarne il `type` e il `payload` nella sezione "Action".
+2. **Stato Corrente**: Al centro, puoi navigare l'albero dello stato. Puoi visualizzare lo stato come un oggetto (`Tree`), un grafico (`Chart`) o vedere le differenze rispetto allo stato precedente (`Diff`). Questo è estremamente utile per vedere l'impatto di un'azione.
+3. **Time-Travel Debugging**: In basso, c'è una timeline che ti permette di "viaggiare nel tempo". Puoi cliccare su un'azione passata per riportare l'intera applicazione a quello stato, oppure usare i pulsanti di play, step-by-step, undo/redo per analizzare la sequenza di eventi.
 
 ## Attività Pratica
 
-1.  **Installa e configura** `@ngrx/store-devtools` nel tuo progetto.
-2.  **Installa l'estensione** Redux DevTools nel tuo browser.
-3.  **Avvia l'applicazione** e apri il pannello Redux DevTools.
-4.  **Interagisci con l'app**: esegui azioni che modificano lo stato (es. login, aggiunta di un prodotto al carrello, ecc.).
-5.  **Ispeziona le azioni**: Osserva come ogni interazione genera una nuova azione nel log. Clicca su un'azione e controlla il suo payload.
-6.  **Analizza i cambiamenti di stato**: Seleziona un'azione e vai sulla tab `Diff` per vedere esattamente cosa è cambiato nello stato.
-7.  **Prova il Time-Travel**: Usa la timeline in basso per tornare a uno stato precedente. Osserva come l'interfaccia utente della tua applicazione si aggiorna per riflettere quello stato. Questo ti aiuta a capire come un bug si è manifestato.
+1. **Installa e configura** `@ngrx/store-devtools` nel tuo progetto.
+2. **Installa l'estensione** Redux DevTools nel tuo browser.
+3. **Avvia l'applicazione** e apri il pannello Redux DevTools.
+4. **Interagisci con l'app**: esegui azioni che modificano lo stato (es. login, aggiunta di un prodotto al carrello, ecc.).
+5. **Ispeziona le azioni**: Osserva come ogni interazione genera una nuova azione nel log. Clicca su un'azione e controlla il suo payload.
+6. **Analizza i cambiamenti di stato**: Seleziona un'azione e vai sulla tab `Diff` per vedere esattamente cosa è cambiato nello stato.
+7. **Prova il Time-Travel**: Usa la timeline in basso per tornare a uno stato precedente. Osserva come l'interfaccia utente della tua applicazione si aggiorna per riflettere quello stato. Questo ti aiuta a capire come un bug si è manifestato.
 
 ## Tabella dei Termini Chiave
 
