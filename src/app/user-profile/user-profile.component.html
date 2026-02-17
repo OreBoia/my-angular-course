@@ -1,14 +1,15 @@
 <div class="profile-container">
   <h2>Profilo Utente (NgRx)</h2>
 
-  <div *ngIf="(isLoggedIn$ | async); else loggedOut">
-    <p>Benvenuto! Ecco i tuoi dati:</p>
-    <pre>{{ user$ | async | json }}</pre>
-    <button (click)="logout()">Logout</button>
-  </div>
-
-  <ng-template #loggedOut>
+  @if ((isLoggedIn$ | async)) {
+    <div>
+      <p>Benvenuto! Ecco i tuoi dati:</p>
+      <pre>{{ user$ | async | json }}</pre>
+      <button (click)="logout()">Logout</button>
+    </div>
+  } @else {
     <p>Nessun utente loggato.</p>
     <button (click)="login()">Login (Simulato)</button>
-  </ng-template>
+  }
+
 </div>

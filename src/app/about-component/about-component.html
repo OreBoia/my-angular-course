@@ -1,9 +1,10 @@
-<div *ngIf="utente; else defaultMsg">
+@if (utente) {
+  <div>
     <p>Ciao, {{ utente }}! Benvenuto nella pagina About.</p>
-</div>
-<ng-template #defaultMsg>
-    <p>Benvenuto nella pagina About.</p>
-</ng-template>
+  </div>
+} @else {
+  <p>Benvenuto nella pagina About.</p>
+}
 
 <button (click)='login()'>login</button>
 

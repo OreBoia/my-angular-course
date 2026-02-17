@@ -20,8 +20,8 @@ export class DirettiveComponent {
     this.mostraLista = !this.mostraLista;
   }
 
-  aggiungiTecnologia(nuovaTecnologia: string): void {
-
-      this.tecnologie.push(nuovaTecnologia);
+  aggiungiTecnologia(nuovaTecnologia: string): void
+  {
+    this.tecnologie.push(nuovaTecnologia);
   }
 }
