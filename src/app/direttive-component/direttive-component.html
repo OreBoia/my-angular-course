@@ -1,15 +1,41 @@
 <button (click)="isVisible = !isVisible">Toggle</button>
-<p *ngIf="isVisible">Questo testo appare e scompare!</p>
+@if (isVisible) {
+    <p>Questo testo appare e scompare!</p>
+}
 
 <button (click)="toggleLista()">
     {{mostraLista == true ? 'Nascondi' : 'Mostra'}}
 </button>
 
-<ul *ngIf="mostraLista">
-    <li
-        *ngFor="let item of tecnologie; let i = index"
-        [ngClass] = "{'evidenziato': item === techPreferita}"
-        [ngStyle] = "{'font-weight': i % 2 === 0 ? 'bold' : 'normal'}">
-            {{item}}
-    </li>
-</ul>
+@if (mostraLista) {
+    <ul>
+        @for (item of tecnologie; track item; let i = $index) {
+            <li
+                [ngClass] = "{'evidenziato': item === techPreferita}"
+                [ngStyle] = "{'font-weight': i % 2 === 0 ? 'bold' : 'normal'}">
+                    {{item}}
+            </li>
+        }
+    </ul>
+}
+
+<select [(ngModel)]="techPreferita">
+  <option value="Angular">Angular</option>
+  <option value="React">React</option>
+  <option value="Vue">Vue</option>
+</select>
+
+@switch (techPreferita) {
+    @case ('Angular') {
+        <p>Hai scelto Angular!</p>
+    }
+    @case ('React') {
+        <p>Hai scelto React!</p>
+    }
+    @case ('Vue') {
+        <p>Hai scelto Vue!</p>
+    }
+    @default {
+        <p>Seleziona una tecnologia</p>
+    }
+}
