@@ -1,0 +1,16 @@
+:host { display: block; padding: 1.5rem; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 1rem;
+}
+
+h2 {
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 0.4rem;
+  margin-bottom: 1rem;
+}

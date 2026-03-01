@@ -1,0 +1,19 @@
+:host {
+  display: block;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.5rem;
+  margin-top: 0.75rem;
+}
+
+.label { color: var(--text-light); font-size: 0.85rem; margin-bottom: 0.25rem; }
+
+.valore {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+}
+
+.bottoni { display: flex; gap: 0.5rem; }

@@ -1,1 +1,73 @@
-/* You can add global styles to this file, and also import other style files */
+/* ===================================================
+   STILI GLOBALI – Design System semplice per lezione
+   =================================================== */
+
+:root {
+  --primary:      #3b82f6;
+  --primary-dark: #1d4ed8;
+  --bg:           #f1f5f9;
+  --surface:      #ffffff;
+  --border:       #cbd5e1;
+  --text:         #1e293b;
+  --text-light:   #64748b;
+  --radius:       8px;
+  --shadow:       0 2px 6px rgba(0, 0, 0, .08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ── tipografia base ── */
+h1, h2, h3 {
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+}
+
+h1 { font-size: 1.8rem; }
+h2 { font-size: 1.4rem; }
+h3 { font-size: 1.2rem; }
+
+p { margin-bottom: 0.5rem; }
+
+/* ── link ── */
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+/* ── bottone base ── */
+button {
+  padding: 0.4rem 1rem;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+button:hover:not(:disabled) { background: var(--primary-dark); }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ── input / select ── */
+input, select {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+input:focus, select:focus { border-color: var(--primary); }

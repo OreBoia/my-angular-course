@@ -1,17 +1,28 @@
+:host { display: block; padding: 1.5rem; }
+
 .profile-container {
-  border: 1px solid #ccc;
-  padding: 16px;
-  margin: 16px;
-  border-radius: 8px;
-  background-color: #f9f9f9;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  max-width: 480px;
+}
+
+h3 {
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 0.4rem;
+  margin-bottom: 1rem;
 }
 
 pre {
-  background-color: #eee;
-  padding: 8px;
-  border-radius: 4px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.8rem;
+  font-size: 0.85rem;
+  overflow-x: auto;
+  margin: 0.75rem 0;
 }
 
-button {
-  margin-right: 8px;
-}
+.bottoni { display: flex; gap: 0.5rem; margin-top: 1rem; }

@@ -1,4 +1,43 @@
+:host { display: block; padding: 1.5rem; }
+
+h3 {
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.bottoni { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+li {
+  padding: 0.4rem 0.8rem;
+  border-bottom: 1px solid var(--border);
+}
+li:last-child { border-bottom: none; }
+
 .evidenziato {
-    background-color: yellow;
-    color: blue;
+  background: #fef9c3;
+  color: #1d4ed8;
+  font-weight: bold;
+}
+
+select {
+  display: block;
+  margin: 0.5rem 0 1rem;
+  min-width: 160px;
+}
+
+.switch-result {
+  padding: 0.5rem 0.8rem;
+  background: var(--bg);
+  border-left: 4px solid var(--primary);
+  border-radius: 0 var(--radius) var(--radius) 0;
 }

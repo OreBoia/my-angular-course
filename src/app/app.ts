@@ -10,6 +10,8 @@ import { AboutComponent } from './about-component/about-component';
 import { RegistrazioneComponent } from './registrazione-component/registrazione-component';
 import { LoginComponent } from './login-component/login-component';
 import { CounterComponent } from './counter/counter.component';
+import { SignalsDemoComponent } from './signals-demo/signals-demo.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @Component({
   selector: 'app-root',
@@ -24,7 +26,9 @@ import { CounterComponent } from './counter/counter.component';
             AboutComponent,
             RegistrazioneComponent,
             LoginComponent,
-            CounterComponent],
+            CounterComponent,
+            SignalsDemoComponent,
+            UserProfileComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

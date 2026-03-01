@@ -1,0 +1,11 @@
+:host {
+  display: block;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+p {
+  font-size: 1.4rem;
+  color: var(--primary);
+  font-weight: 600;
+}

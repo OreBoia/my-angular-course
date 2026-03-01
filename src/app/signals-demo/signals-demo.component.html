@@ -1,0 +1,138 @@
+<div class="signals-demo">
+
+  <h1>Angular Signals – Demo per principianti</h1>
+
+  <!-- ────────────────────────────────────────────────────────────── -->
+  <!-- BLOCCO 1: signal()                                             -->
+  <!-- ────────────────────────────────────────────────────────────── -->
+  <section class="card">
+    <h2>1 · <code>signal()</code></h2>
+    <p>
+      Un <strong>signal</strong> è un contenitore reattivo.
+      Quando il suo valore cambia, Angular aggiorna la vista in automatico.
+    </p>
+
+    <!-- lettura del signal: si chiama come una funzione -->
+    <p class="valore-grande">contatore = {{ contatore() }}</p>
+
+    <div class="bottoni">
+      <button (click)="decrementa()">− Decrementa</button>
+      <button (click)="reset()">Reset</button>
+      <button (click)="incrementa()">+ Incrementa</button>
+    </div>
+
+    <div class="codice">
+      <strong>Nel componente (.ts):</strong>
+      <pre>
+contatore = signal(0);          // crea il signal
+
+contatore()                     // leggi il valore
+contatore.set(5)                // imposta un valore fisso
+contatore.update(v => v + 1)   // aggiorna in base al valore precedente
+      </pre>
+    </div>
+  </section>
+
+  <!-- ────────────────────────────────────────────────────────────── -->
+  <!-- BLOCCO 2: computed()                                           -->
+  <!-- ────────────────────────────────────────────────────────────── -->
+  <section class="card">
+    <h2>2 · <code>computed()</code></h2>
+    <p>
+      Un <strong>computed</strong> è un valore derivato da uno o più signal.
+      Si ricalcola <em>automaticamente</em> ogni volta che i signal da cui dipende cambiano.
+    </p>
+
+    <table>
+      <tr>
+        <td><code>contatore()</code></td>
+        <td>{{ contatore() }}</td>
+      </tr>
+      <tr>
+        <td><code>doppio()</code></td>
+        <td>{{ doppio() }}</td>
+      </tr>
+      <tr>
+        <td><code>saluto()</code></td>
+        <td>{{ saluto() }}</td>
+      </tr>
+    </table>
+
+    <div class="row">
+      <label>Cambia il nome: </label>
+      <input type="text" [value]="nome()" (input)="aggiornaNome($event)" />
+    </div>
+
+    <div class="codice">
+      <strong>Nel componente (.ts):</strong>
+      <pre>
+nome    = signal('Marco');
+doppio  = computed(() => this.contatore() * 2);
+saluto  = computed(() => 'Ciao, ' + this.nome() + '!');
+      </pre>
+    </div>
+  </section>
+
+  <!-- ────────────────────────────────────────────────────────────── -->
+  <!-- BLOCCO 3: effect()                                             -->
+  <!-- ────────────────────────────────────────────────────────────── -->
+  <section class="card">
+    <h2>3 · <code>effect()</code></h2>
+    <p>
+      Un <strong>effect</strong> è una funzione che viene eseguita
+      <em>ogni volta</em> che i signal che legge cambiano.
+      Utile per logging, localStorage, chiamate esterne.
+    </p>
+
+    <div class="log-box">
+      <p><strong>Log (ultimi 5 cambiamenti):</strong></p>
+      @for (riga of logRighe; track riga) {
+        <div class="log-riga">{{ riga }}</div>
+      }
+    </div>
+
+    <div class="codice">
+      <strong>Nel componente (.ts):</strong>
+      <pre>
+private _log = effect(() =&gt; &#123;
+  // viene riletto ogni volta che contatore o nome cambiano
+  console.log('contatore =', this.contatore(), 'nome =', this.nome());
+&#125;);
+      </pre>
+    </div>
+  </section>
+
+  <!-- ────────────────────────────────────────────────────────────── -->
+  <!-- RIEPILOGO                                                      -->
+  <!-- ────────────────────────────────────────────────────────────── -->
+  <section class="card riepilogo">
+    <h2>Riepilogo</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>API</th>
+          <th>Cosa fa</th>
+          <th>Si aggiorna</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>signal()</code></td>
+          <td>Contiene un valore scrivibile</td>
+          <td>Manualmente (.set / .update)</td>
+        </tr>
+        <tr>
+          <td><code>computed()</code></td>
+          <td>Valore derivato (sola lettura)</td>
+          <td>Automaticamente</td>
+        </tr>
+        <tr>
+          <td><code>effect()</code></td>
+          <td>Effetto collaterale</td>
+          <td>Automaticamente</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</div>
