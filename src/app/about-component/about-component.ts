@@ -6,7 +6,7 @@ import { CounterComponent } from '../counter/counter.component';
 
 @Component({
   selector: 'app-about-component',
-  imports: [CounterComponent],
+  imports: [],
   templateUrl: './about-component.html',
   styleUrl: './about-component.css'
 })
