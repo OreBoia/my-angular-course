@@ -3,7 +3,7 @@ import { CounterComponent } from '../counter/counter.component';
 
 @Component({
   selector: 'app-home-component',
-  imports: [CounterComponent],
+  imports: [],
   templateUrl: './home-component.html',
   styleUrl: './home-component.css'
 })

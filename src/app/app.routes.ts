@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home-component/home-component';
-import { authGuard } from './auth-guard';
+import { authGuard } from './auth-guard/auth-guard';
 import { AboutComponent } from './about-component/about-component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SignalsDemoComponent } from './signals-demo/signals-demo.component';
