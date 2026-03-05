@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './binding-component.html',
   styleUrl: './binding-component.css'
 })
-export class BindingComponent 
+export class BindingComponent
 {
   userName: string = 'Edoardo';
   imageUrl: string = 'https://colorlib.com/wp/wp-content/uploads/sites/2/angular-logo.png.webp';

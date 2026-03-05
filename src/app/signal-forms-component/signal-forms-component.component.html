@@ -1,0 +1,29 @@
+<label>
+  Nome:
+  <input type="text" [formField]="contactForm.name" />
+</label>
+@if (contactForm.name().touched() && contactForm.name().invalid()) {
+  @for (error of contactForm.name().errors(); track error) {
+    <p class="error">{{ error.message }}</p>
+  }
+}
+
+<label>
+  Telefono:
+  <input type="tel" [formField]="contactForm.phone" />
+</label>
+@if (contactForm.phone().touched() && contactForm.phone().invalid()) {
+  @for (error of contactForm.phone().errors(); track error) {
+    <p class="error">{{ error.message }}</p>
+  }
+}
+
+<label>
+  Messaggio:
+  <textarea [formField]="contactForm.message" rows="4"></textarea>
+</label>
+@if (contactForm.message().touched() && contactForm.message().invalid()) {
+  @for (error of contactForm.message().errors(); track error) {
+    <p class="error">{{ error.message }}</p>
+  }
+}

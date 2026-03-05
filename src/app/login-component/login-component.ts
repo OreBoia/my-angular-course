@@ -9,6 +9,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
   styleUrl: './login-component.css'
 })
 export class LoginComponent {
+[x: string]: any;
   loginForm: FormGroup = new FormGroup({
     username: new FormControl<string>("", Validators.required),
     password: new FormControl<string>("", [Validators.required, Validators.maxLength(6)])
