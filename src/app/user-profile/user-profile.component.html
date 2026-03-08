@@ -1,15 +1,31 @@
-<div class="profile-container">
-  <h2>Profilo Utente (NgRx)</h2>
+<nav>
+  <a routerLink="/users/1">Alice</a>
+  <a routerLink="/users/2">Marco</a>
+  <a routerLink="/users/3">Sara</a>
+</nav>
 
-  @if ((isLoggedIn$ | async)) {
-    <div>
-      <p>Benvenuto! Ecco i tuoi dati:</p>
-      <pre>{{ user$ | async | json }}</pre>
-      <button (click)="logout()">Logout</button>
-    </div>
-  } @else {
-    <p>Nessun utente loggato.</p>
-    <button (click)="login()">Login (Simulato)</button>
-  }
+<!-- Asincrono -->
+@if (userResource.isLoading()) {
+  <p>Caricamento...</p>
+} @else if (userResource.value(); as user) {
+  <div class="profile-card">
+    <h2>{{ user.name }}</h2>
+    <p>{{ user.email }}</p>
+    <p>{{ user.bio }}</p>
+  </div>
+} @else {
+  <p>Utente non trovato.</p>
+}
 
-</div>
+
+<!-- Sincrono
+@if (user(); as u) {
+      <div class="profile-card">
+        <h2>{{ u.name }}</h2>
+        <p>{{ u.email }}</p>
+        <p>{{ u.bio }}</p>
+      </div>
+} @else {
+  <p>Utente non trovato.</p>
+} -->
+

@@ -1,37 +1,25 @@
-import { Component } from '@angular/core';
-import { AsyncPipe, JsonPipe } from '@angular/common';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { User } from '../state/user.model';
-import { selectUser, selectIsLoggedIn } from '../state/user.selectors';
-import { setUser, clearUser } from '../state/user.actions';
+import { Component, input, inject, resource, computed } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { UserService } from '../user-service/user-service';
 
 @Component({
   selector: 'app-user-profile',
-  standalone: true,
-  imports: [AsyncPipe, JsonPipe],
-  templateUrl: './user-profile.component.html',
-  styleUrls: ['./user-profile.component.css']
+  imports: [RouterLink],
+  templateUrl:'user-profile.component.html'
 })
 export class UserProfileComponent {
-  user$: Observable<User | null>;
-  isLoggedIn$: Observable<boolean>;
+[x: string]: any;
+  // Il router inietta automaticamente il parametro :id qui
+  id = input.required<string>();
 
-  constructor(private store: Store) {
-    this.user$ = this.store.select(selectUser);
-    this.isLoggedIn$ = this.store.select(selectIsLoggedIn);
-  }
+  private userService = inject(UserService);
 
-  login() {
-    const mockUser: User = {
-      id: '1',
-      name: 'John Doe',
-      email: 'john.doe@example.com'
-    };
-    this.store.dispatch(setUser({ user: mockUser }));
-  }
+  //Promise - asincrono
+  userResource = resource({
+    params: () => ({ id: this.id() }),
+    loader: ({ params }) => this.userService.getUser(params.id)
+  });
 
-  logout() {
-    this.store.dispatch(clearUser());
-  }
+  //Computed - sincrono
+  //user = computed(() => this.userService.getUser(this.id()));
 }

@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-figlio',
@@ -6,20 +6,31 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: './figlio-component.html',
   styleUrl: './figlio-component.css'
 })
-export class FiglioComponent 
+export class FiglioComponent
 {
   @Input() count: number = 0;
   @Output() countChange: EventEmitter<number> = new EventEmitter<number>();
 
-  incrementa(): void 
+  countSignal = input<number>(0)
+  countChangeSignal = output<number>();
+
+  incrementa(): void
   {
-    this.count++;
-    this.countChange.emit(this.count);
+    this.countChange.emit(this.count++);
   }
 
-  decrementa(): void 
+  incrementaSignal():void
   {
-    this.count--;
-    this.countChange.emit(this.count);
+    this.countChangeSignal.emit(this.count++)
+  }
+
+  decrementa(): void
+  {
+    this.countChange.emit(this.count--);
+  }
+
+  decrementaSignal():void
+  {
+    this.countChangeSignal.emit(this.count--)
   }
 }

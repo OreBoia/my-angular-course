@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FiglioComponent } from "../figlio-component/figlio-component";
 
 @Component({
@@ -7,12 +7,18 @@ import { FiglioComponent } from "../figlio-component/figlio-component";
   templateUrl: './padre-component.html',
   styleUrl: './padre-component.css'
 })
-export class PadreComponent 
+export class PadreComponent
 {
   contatore: number = 0;
-  
-  onConteggioCambiato(nuovoValore: number): void 
+
+  counterSignal = signal<number>(0)
+
+  onConteggioCambiato(nuovoValore: number): void
   {
-    this.contatore = nuovoValore;
+    this.contatore = nuovoValore
+  }
+
+  onCounterSignalChanged(newValue:number): void{
+    this.counterSignal.set(newValue)
   }
 }

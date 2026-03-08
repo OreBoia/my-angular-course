@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
   email, form, FormField,
@@ -19,10 +19,11 @@ interface ContactData {
             FormsModule],
   templateUrl: './signal-forms-component.component.html',
   styleUrl: './signal-forms-component.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SignalFormsComponentComponent
 {
-
+   // 1. Crea il modello come signal
   contactModel = signal<ContactData>({
     name: '',
     email: '',
