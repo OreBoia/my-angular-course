@@ -1,25 +1,26 @@
+import { CommonModule } from '@angular/common';
 import { Component, input, inject, resource, computed } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { UserService } from '../user-service/user-service';
 
 @Component({
   selector: 'app-user-profile',
-  imports: [RouterLink],
+  imports: [RouterLink, CommonModule],
   templateUrl:'user-profile.component.html'
 })
-export class UserProfileComponent {
-[x: string]: any;
+export class UserProfileComponent
+{
   // Il router inietta automaticamente il parametro :id qui
-  id = input.required<string>();
+  id = input.required<string>()
 
-  private userService = inject(UserService);
+  private userService = inject(UserService)
 
   //Promise - asincrono
   userResource = resource({
     params: () => ({ id: this.id() }),
-    loader: ({ params }) => this.userService.getUser(params.id)
+    loader: ({ params }) => this.userService.getUserAsync(params.id)
   });
 
   //Computed - sincrono
-  //user = computed(() => this.userService.getUser(this.id()));
+  user = computed(() => this.userService.getUserSync(this.id()));
 }

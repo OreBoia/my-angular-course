@@ -16,13 +16,15 @@ export class UserService {
   ];
 
   //Asincrono
-  async getUser(id: string): Promise<User | undefined> {
+  async getUserAsync(id: string): Promise<User | undefined>
+  {
     // Simula una chiamata HTTP
     return this.users.find(u => u.id === id);
   }
 
   //Sincrono
-  /*getUser(id: string): User | undefined {
+  getUserSync(id: string): User | undefined
+  {
     return this.users.find(u => u.id === id);
-  }*/
+  }
 }

@@ -5,27 +5,31 @@
 </nav>
 
 <!-- Asincrono -->
-@if (userResource.isLoading()) {
+@if (userResource.isLoading())
+{
   <p>Caricamento...</p>
-} @else if (userResource.value(); as user) {
-  <div class="profile-card">
+}
+@else if (userResource.value(); as user) {
+  <div class="profile-container">
     <h2>{{ user.name }}</h2>
     <p>{{ user.email }}</p>
     <p>{{ user.bio }}</p>
   </div>
-} @else {
+}
+@else
+{
   <p>Utente non trovato.</p>
 }
 
 
-<!-- Sincrono
-@if (user(); as u) {
-      <div class="profile-card">
+<!-- Sincrono -->
+@if (user() ; as u) {
+      <div class="profile-container">
         <h2>{{ u.name }}</h2>
         <p>{{ u.email }}</p>
         <p>{{ u.bio }}</p>
       </div>
 } @else {
   <p>Utente non trovato.</p>
-} -->
+}
 
