@@ -5,8 +5,7 @@ import { PadreComponent } from './padre-component/padre-component';
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet,
-            RouterModule,
-            PadreComponent],
+            RouterModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
