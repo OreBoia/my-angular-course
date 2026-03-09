@@ -1,0 +1,16 @@
+<h2>Profile</h2>
+<p>Dati precaricati con <code>resolve</code> prima del rendering del componente.</p>
+
+<nav>
+  <a routerLink="/profile/1">Profilo 1</a>
+  <a routerLink="/profile/2">Profilo 2</a>
+  <a routerLink="/profile/3">Profilo 3</a>
+</nav>
+
+@if (user; as loadedUser) {
+  <h3>{{ loadedUser.name }}</h3>
+  <p>{{ loadedUser.email }}</p>
+  <p>{{ loadedUser.bio }}</p>
+} @else {
+  <p>Utente non trovato.</p>
+}

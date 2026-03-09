@@ -1,27 +1,43 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  private loggedIn = signal(false);
+  private role = signal<'admin' | 'user'>('user');
+  private plan = signal<'premium' | 'basic'>('basic');
 
-  constructor() { }
+  login(options?: { role?: 'admin' | 'user'; plan?: 'premium' | 'basic' }): void {
+    this.loggedIn.set(true);
 
-  private logged = false;
+    if (options?.role) {
+      this.role.set(options.role);
+    }
 
-  
-  login() 
-  {
-    this.logged = true;
+    if (options?.plan) {
+      this.plan.set(options.plan);
+    }
   }
 
-  logout()
-  {
-    this.logged = false;
+  logout(): void {
+    this.loggedIn.set(false);
   }
 
-  isAuthenticated(): boolean
-  {
-    return this.logged;
+  isLoggedIn(): boolean {
+    return this.loggedIn();
+  }
+
+  getRole(): 'admin' | 'user' {
+    return this.role();
+  }
+
+  getPlan(): 'premium' | 'basic' {
+    return this.plan();
+  }
+
+  // Backward-compatible alias used in other lessons.
+  isAuthenticated(): boolean {
+    return this.isLoggedIn();
   }
 }

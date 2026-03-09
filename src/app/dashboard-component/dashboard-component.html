@@ -1,0 +1,12 @@
+<h2>Dashboard</h2>
+<p>Rotta protetta con <code>canActivate</code>.</p>
+<p>Ruolo: <strong>{{ auth.getRole() }}</strong> | Piano: <strong>{{ auth.getPlan() }}</strong></p>
+
+<nav>
+  <a routerLink="/admin/users">Admin Users</a>
+  <a routerLink="/edit">Edit</a>
+  <a routerLink="/report">Report</a>
+  <a routerLink="/profile/1">Profile 1</a>
+</nav>
+
+<button type="button" (click)="logout()">Logout</button>

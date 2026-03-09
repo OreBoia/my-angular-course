@@ -1,0 +1,13 @@
+<h2>Edit</h2>
+<p>Guard <code>canDeactivate</code>: prova a scrivere qualcosa e cambiare pagina senza salvare.</p>
+
+<input
+  type="text"
+  [value]="currentValue()"
+  (input)="onInput($event)"
+  placeholder="Scrivi una modifica"
+/>
+<button type="button" (click)="save()">Salva</button>
+
+<p>Valore corrente: {{ currentValue() }}</p>
+<p>Ultimo valore salvato: {{ savedValue() }}</p>
