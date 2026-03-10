@@ -39,7 +39,7 @@ export const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
-    canActivate: [authGuard],
+    canActivate: [authGuard, adminGuard],
     canActivateChild: [adminGuard],
     children: [
       { path: '', pathMatch: 'full', redirectTo: 'users' },

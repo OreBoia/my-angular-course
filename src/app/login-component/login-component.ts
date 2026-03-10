@@ -31,6 +31,6 @@ export class LoginComponent {
     const datiLogin = this.loginForm.getRawValue();
     this.authService.login({ role: datiLogin.role, plan: datiLogin.plan });
     console.log('Login effettuato per', datiLogin.username, '| ruolo:', datiLogin.role, '| piano:', datiLogin.plan);
-    void this.router.navigate(['/dashboard']);
+    void this.router.navigateByUrl('/dashboard');
   }
 }

@@ -57,6 +57,7 @@ export class SignalFormsComponentComponent
   onSubmit(event: Event) {
     event.preventDefault();
     console.log('Dati:', this.contactModel());
+    
   }
 }
 
