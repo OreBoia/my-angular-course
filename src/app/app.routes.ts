@@ -24,6 +24,7 @@ import { PremiumReportComponent } from './premium-report-component/premium-repor
 import { BasicReportComponent } from './basic-report-component/basic-report-component';
 import { ProfileComponent } from './profile-component/profile-component';
 import { userResolver } from './user-resolver/user-resolver';
+import { CounterComponent } from './counter/counter.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -67,5 +68,6 @@ export const routes: Routes = [
   { path: 'registrazione', component: RegistrazioneComponent },
   { path: 'hello-world', component: HelloWorldComponent },
   { path: 'my-component', component: MyComponent },
+  { path: 'counter-state', component: CounterComponent},
   { path: '**', redirectTo: 'home' }
 ];

@@ -5,11 +5,10 @@ import { Observable } from 'rxjs';
 
 // Importa azioni e selettori
 import { increment, decrement, reset } from '../state/counter.actions';
-import { selectCountValue } from '../state/counter.selectors';
+import { selectCounter, selectCountValue } from '../state/counter.selectors';
 
 @Component({
   selector: 'app-counter',
-  standalone: true,
   imports: [AsyncPipe], // AsyncPipe è fondamentale per gestire gli Observable nel template
   templateUrl: `./counter.component.html`,
 })
@@ -18,7 +17,7 @@ export class CounterComponent {
   count$: Observable<number>;
 
   constructor(private store: Store) {
-    this.count$ = this.store.select(selectCountValue);
+    this.count$ = this.store.select(selectCounter);
   }
 
   // 2. Metodi che "dispatchano" (innescano) le azioni
