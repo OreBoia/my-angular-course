@@ -1,0 +1,55 @@
+<section class="exercise-card">
+  <h2>Esercizio 1: Registrazione Utente (Template-Driven)</h2>
+
+  <form #registrationForm="ngForm" (ngSubmit)="onSubmit(registrationForm)">
+    <div class="form-row">
+      <label for="nome">Nome</label>
+      <input
+        id="nome"
+        type="text"
+        name="nome"
+        [(ngModel)]="utente.nome"
+        required
+        minlength="3"
+        #nomeModel="ngModel"
+      />
+      @if (nomeModel.touched && nomeModel.invalid) {
+        <small class="error">Il nome e' obbligatorio e deve avere almeno 3 caratteri.</small>
+      }
+    </div>
+
+    <div class="form-row">
+      <label for="email">Email</label>
+      <input
+        id="email"
+        type="email"
+        name="email"
+        [(ngModel)]="utente.email"
+        required
+        email
+        #emailModel="ngModel"
+      />
+      @if (emailModel.touched && emailModel.invalid) {
+        <small class="error">Inserisci un'email valida.</small>
+      }
+    </div>
+
+    <div class="form-row">
+      <label for="eta">Eta'</label>
+      <input
+        id="eta"
+        type="number"
+        name="eta"
+        [(ngModel)]="utente.eta"
+        required
+        min="18"
+        #etaModel="ngModel"
+      />
+      @if (etaModel.touched && etaModel.invalid) {
+        <small class="error">L'eta' e' obbligatoria e deve essere almeno 18.</small>
+      }
+    </div>
+
+    <button type="submit" [disabled]="registrationForm.invalid">Registrati</button>
+  </form>
+</section>

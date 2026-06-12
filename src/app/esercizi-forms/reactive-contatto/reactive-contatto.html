@@ -1,0 +1,42 @@
+<section class="exercise-card">
+  <h2>Esercizio 2: Form di Contatto (Reactive)</h2>
+
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <label for="oggetto">Oggetto</label>
+      <input id="oggetto" type="text" formControlName="oggetto" />
+      @if (contactForm.controls.oggetto.touched && contactForm.controls.oggetto.invalid) {
+        <small class="error">L'oggetto e' obbligatorio.</small>
+      }
+    </div>
+
+    <div class="form-row">
+      <label for="messaggio">Messaggio</label>
+      <textarea id="messaggio" rows="4" formControlName="messaggio"></textarea>
+      <small>{{ messageLength }}/{{ minMessaggioLength }} caratteri</small>
+      @if (contactForm.controls.messaggio.touched && contactForm.controls.messaggio.invalid) {
+        <small class="error">Il messaggio e' obbligatorio e deve avere almeno 10 caratteri.</small>
+      }
+    </div>
+
+    <div class="form-row">
+      <label for="urgenza">Urgenza</label>
+      <select id="urgenza" formControlName="urgenza">
+        <option value="bassa">Bassa</option>
+        <option value="media">Media</option>
+        <option value="alta">Alta</option>
+      </select>
+    </div>
+
+    <button type="submit" [disabled]="contactForm.invalid">Invia</button>
+  </form>
+
+  @if (submittedData) {
+    <div class="result-box">
+      <h3>Dati inviati</h3>
+      <p><strong>Oggetto:</strong> {{ submittedData.oggetto }}</p>
+      <p><strong>Messaggio:</strong> {{ submittedData.messaggio }}</p>
+      <p><strong>Urgenza:</strong> {{ submittedData.urgenza }}</p>
+    </div>
+  }
+</section>

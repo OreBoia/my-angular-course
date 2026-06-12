@@ -21,16 +21,16 @@ export class FiglioComponent
 
   incrementaSignal():void
   {
-    this.countChangeSignal.emit(this.count++)
+    this.countChangeSignal.emit(++this.count)
   }
 
   decrementa(): void
   {
-    this.countChange.emit(this.count--);
+    this.countChange.emit(--this.count);
   }
 
   decrementaSignal():void
   {
-    this.countChangeSignal.emit(this.count--)
+    this.countChangeSignal.emit(--this.count)
   }
 }

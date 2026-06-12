@@ -25,6 +25,8 @@ import { BasicReportComponent } from './basic-report-component/basic-report-comp
 import { ProfileComponent } from './profile-component/profile-component';
 import { userResolver } from './user-resolver/user-resolver';
 import { CounterComponent } from './counter/counter.component';
+import { TemplateDrivenRegistrazioneComponent } from './esercizi-forms/template-driven-registrazione/template-driven-registrazione';
+import { ReactiveContattoComponent } from './esercizi-forms/reactive-contatto/reactive-contatto';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -69,5 +71,7 @@ export const routes: Routes = [
   { path: 'hello-world', component: HelloWorldComponent },
   { path: 'my-component', component: MyComponent },
   { path: 'counter-state', component: CounterComponent},
+  { path: 'esercizio-template-registrazione', component: TemplateDrivenRegistrazioneComponent },
+  { path: 'esercizio-reactive-contatto', component: ReactiveContattoComponent },
   { path: '**', redirectTo: 'home' }
 ];
